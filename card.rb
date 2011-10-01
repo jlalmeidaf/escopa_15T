@@ -6,4 +6,7 @@ class Card
   def valid?
     (1..13).include? @valor
   end
+  def value
+  	@valor
+  end
 end

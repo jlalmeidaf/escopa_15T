@@ -16,4 +16,9 @@ describe Card do
     card = Card.new 14, @naipe
     card.valid?.should == false
   end
+  it 'valor da carta' do
+	value = double()
+	card = Card.new value, @naipe
+	card.value.should == value
+  end
 end

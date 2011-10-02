@@ -9,4 +9,11 @@ class Card
   def value
   	@valor
   end
+  def name
+  	return "as" if @valor == 1
+	return @valor.to_s if @valor > 1 and @valor < 11
+	return "valete" if @valor == 11
+	return "dama" if @valor == 12
+	return "rei" if @valor == 13
+  end
 end

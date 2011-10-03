@@ -23,4 +23,11 @@ describe Pack do
   	card = @pack.pop_card
 	card.class.should == Card
   end
+  it 'Tentar pegar uma carta no baralho vazio' do
+  	52.times {
+		@pack.pop_card
+  	}
+	card = @pack.pop_card
+	card.should == nil
+  end
 end

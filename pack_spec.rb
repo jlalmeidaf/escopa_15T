@@ -19,4 +19,8 @@ describe Pack do
 	@pack.remove_cards_of_value 10
 	@pack.left_cards.should == 40
   end
+  it 'Pegar a carta de cima' do
+  	card = @pack.pop_card
+	card.class.should == Card
+  end
 end

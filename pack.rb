@@ -25,4 +25,7 @@ class Pack
 				@cartas_validas.delete card if card.value == value
 			      }
   end
+  def pop_card
+  	@cartas_validas.pop
+  end
 end

@@ -16,4 +16,7 @@ class Card
 	return "dama" if @valor == 12
 	return "rei" if @valor == 13
   end
+  def < card2
+	return value < card2.value
+  end
 end

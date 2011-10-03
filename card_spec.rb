@@ -37,4 +37,14 @@ describe Card do
 	card = Card.new 13, @naipe
 	card.name.should == "rei"
   end
+  it 'Verificar se uma carta eh menor do que outra' do
+  	card = Card.new 1, @naipe
+	card2 = Card.new 2, @naipe
+	card.<(card2).should == true
+  end
+  it 'Verficar se uma carta nao eh menor do que outra' do
+  	card = Card.new 2, @naipe
+	card2 = Card.new 1, @naipe
+	card.<(card2).should == false  	
+  end
 end

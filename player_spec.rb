@@ -23,4 +23,5 @@ describe Player do
 		card = jogador.take_a_card_of_hand 0
 		card.class.should == NilClass
 	end
+
 end

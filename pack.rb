@@ -37,9 +37,3 @@ class Pack
   	
   end
 end
-#class PackScope < Pack
-#	def initialize
-#		super
-
-#	end
-#end

@@ -11,6 +11,7 @@ describe Board do
 	it 'Tirar uma carta' do
 		carta = double()
 		@board.push_card_in_the_board carta
+		@board.number_the_cards_in_the_board.should == 1
 		@board.give_a_card carta
 		@board.number_the_cards_in_the_board.should == 0
 	end

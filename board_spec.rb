@@ -4,14 +4,21 @@ describe Board do
 	  @board = Board.new
 	end
 	it 'Colocar uma carta na mesa' do
-		card = double()
-		@board.push_card_in_the_board card
+		carta = double()
+		@board.push_card_in_the_board carta
 		@board.number_the_cards_in_the_board.should == 1
 	end
 	it 'Tirar uma carta de uma posicao' do
-		card = double()
-		@board.push_card_in_the_board card
-		@board.give_a_card(0).should == card
+		carta = double()
+		@board.push_card_in_the_board carta
+		@board.give_a_card(0).should == carta
 		@board.number_the_cards_in_the_board.should == 0
+	end
+	it 'Ver uma carta na mesa' do
+		carta = double()
+		@board.push_card_in_the_board carta
+		carta_olhada = @board.look_card 0
+		carta_olhada.should == carta
+		@board.number_the_cards_in_the_board.should == 1
 	end
 end

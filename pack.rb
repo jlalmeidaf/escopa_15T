@@ -10,8 +10,7 @@ class Pack
 	(1..13).each { |card|
 		carta = Card.new card, naipe
 		@cartas_validas << carta
-	} 
-	
+		    } 	
 	}
   end
   def left_cards
@@ -28,5 +27,19 @@ class Pack
   def pop_card
   	@cartas_validas.pop
   end
+  def give_a_card card
+  	@cartas_validas << card
+  end
+  def prepare_for_scope
+    remove_cards_of_value 8
+    remove_cards_of_value 9
+    remove_cards_of_value 10
+  	
+  end
 end
+#class PackScope < Pack
+#	def initialize
+#		super
 
+#	end
+#end

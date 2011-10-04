@@ -47,4 +47,18 @@ describe Card do
 	card2 = Card.new 1, @naipe
 	card.<(card2).should == false  	
   end
+  it 'Valor das cartas para escopa de 15' do
+  	card = Card.new 1, @naipe
+	card.value_for_escopa.should == 1
+	card = Card.new 2, @naipe
+	card.value_for_escopa.should == 2
+	card = Card.new 7, @naipe
+	card.value_for_escopa.should == 7
+	card = Card.new 11, @naipe
+	card.value_for_escopa.should == 8
+	card = Card.new 12, @naipe
+	card.value_for_escopa.should == 9
+	card = Card.new 13, @naipe
+	card.value_for_escopa.should == 10
+  end
 end

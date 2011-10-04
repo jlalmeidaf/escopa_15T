@@ -9,6 +9,9 @@ class Card
   def value
   	@valor
   end
+  def value_for_escopa
+	(@valor < 8) ? @valor : @valor - 3
+  end
   def name
   	return "as" if @valor == 1
 	return @valor.to_s if @valor > 1 and @valor < 11

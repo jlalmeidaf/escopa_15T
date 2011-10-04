@@ -29,3 +29,4 @@ class Pack
   	@cartas_validas.pop
   end
 end
+

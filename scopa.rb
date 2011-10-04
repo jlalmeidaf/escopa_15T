@@ -1,5 +1,5 @@
 class Scopa
-	def initialize cards
+	def initialize cards = []
 		@cards = cards
 	end
 	def cards

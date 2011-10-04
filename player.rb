@@ -22,11 +22,19 @@ class Player
 	def scopa(card,mesa, cartas)		
 		soma = @hand[card].value_for_escopa
 		cartas.each { |card| the_card = mesa.look_card(card); the_card_value = the_card.value_for_escopa; soma = soma + the_card_value }
+		
+		cartas = cartas
 		if soma == 15
 			my_card = take_a_card_of_hand card
 			cards_for_scopa = [my_card]
-			cartas.each { |card| the_card = mesa.give_a_card(card); cards_for_scopa << the_card }
-			@scopas << Scopa.new(cards_for_scopa)
+			cards_from_board = []
+			cartas.each { |card| the_card = mesa.look_card(card); cards_from_board << the_card ;}
+			cards_from_board.each { |card| mesa.delete_a_card card }
+			cards_for_scopa << cards_from_board
+			cards_for_scopa.flatten!
+			scopa = Scopa.new(cards_for_scopa)
+			@scopas << scopa
+			
 		end
 	end
 	def number_of_scopas
@@ -35,6 +43,20 @@ class Player
 	def score
 		pontos = 0
 		@scopas.each{|scopa| pontos += 1}
+		if number_of_seven == 4
+			pontos =+ 3
+		end
 		pontos		
 	end
+	def number_of_seven
+		sevens = 0
+		@hand.each{|card| sevens +=1 if card.value_for_escopa == 7}
+		
+		@scopas.each { |scopa_list| cards = scopa_list.cards();
+				p cards
+				cards.each { |card| sevens +=1 if card.value_for_escopa == 7 }
+#				 p scopa.cards()
+			     }
+	end
+	
 end

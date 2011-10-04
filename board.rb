@@ -19,6 +19,9 @@ class Board
 		card
 		
 	end
+	def delete_a_card card
+		@board_cards.delete card
+	end
 
 	
 end

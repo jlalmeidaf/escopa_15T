@@ -13,10 +13,8 @@ class Board
 	def look_card card_number
 		@board_cards[card_number]
 	end
-	def give_a_card position
-		card = @board_cards[position]
-		@board_cards.delete_at position
-		card
+	def give_a_card card
+		@board_cards.delete card
 		
 	end
 	def delete_a_card card

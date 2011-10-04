@@ -8,10 +8,10 @@ describe Board do
 		@board.push_card_in_the_board carta
 		@board.number_the_cards_in_the_board.should == 1
 	end
-	it 'Tirar uma carta de uma posicao' do
+	it 'Tirar uma carta' do
 		carta = double()
 		@board.push_card_in_the_board carta
-		@board.give_a_card(0).should == carta
+		@board.give_a_card carta
 		@board.number_the_cards_in_the_board.should == 0
 	end
 	it 'Ver uma carta na mesa' do

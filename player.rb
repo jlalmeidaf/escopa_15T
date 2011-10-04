@@ -41,8 +41,8 @@ class Player
 	def score
 		pontos = 0
 		@scopas.each{|scopa| pontos += 1}
-		if number_of_seven == 4
-			pontos =+ 3
+		if number_of_seven() == 4
+			pontos += 3
 		end
 		pontos		
 	end
@@ -53,6 +53,7 @@ class Player
 		@scopas.each { |scopa_list| cards = scopa_list.cards();
 				cards.each { |card| sevens +=1 if card.value_for_escopa == 7 }
 			     }
+		sevens
 	end
 	
 end

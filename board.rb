@@ -3,7 +3,6 @@ class Board
 	def initialize
 		@board_cards = []
 	end
-
 	def push_card_in_the_board card
 		@board_cards << card
 	end
@@ -19,8 +18,6 @@ class Board
 	end
 	def delete_a_card card
 		@board_cards.delete card
-	end
-
-	
+	end	
 end
 
